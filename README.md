@@ -34,7 +34,7 @@ model User {
 }
 ```
 
-Note the first line which adds the `@db.Uuid` annotation. This tells Prisma Migrate to generate a migration with the `uuid` type.
+Note the first line which adds the `@db.Uuid` [native type](https://www.prisma.io/docs/concepts/database-connectors/postgresql#native-type-mappings) attribute. This tells Prisma Migrate to generate a migration with the `uuid` type for the `id` column.
 
 To verify, open the [migration](./prisma/migrations/20210506095939_/migration.sql):
 
