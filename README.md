@@ -1,6 +1,6 @@
 # Simple TypeScript Script Example with UUIDs
 
-This example shows how to use [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) in a **simple TypeScript script** to read and write data in a PostgreSQL database. 
+This example shows how to use [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) in a **simple TypeScript script** to read and write data in a PostgreSQL database.
 
 ## Getting started
 
@@ -21,7 +21,6 @@ npm run migrate:dev
 ```bash
 npm run dev
 ```
-
 
 ## Using the native uuid type in PostgreSQL with Prisma
 
@@ -49,7 +48,6 @@ CREATE TABLE "User" (
 );
 ```
 
-
 ## Verifying the size of the PostgreSQL UUID type
 
 To check the size of the type `uuid` in PostgreSQL, run the following query:
@@ -58,10 +56,18 @@ To check the size of the type `uuid` in PostgreSQL, run the following query:
 SELECT typlen FROM pg_type WHERE oid = 'uuid'::regtype::oid
 ```
 
+Which returns:
+
+```
++----------+
+| typlen   |
+|----------|
+| 16       |
++----------+
+```
+
+Indicating that it's 16 bytes long (128 bits).
+
 The size of the `uuid` type is also documented in the [PostgreSQL docs](https://www.postgresql.org/docs/current/datatype-uuid.html):
 
-
-> A UUID is written as a sequence of lower-case hexadecimal digits, in several groups separated by hyphens, specifically a group of 8 digits followed by three groups of 4 digits followed by a group of 12 digits, **for a total of 32 digits representing the 128 bits**. 
-
-
-
+> A UUID is written as a sequence of lower-case hexadecimal digits, in several groups separated by hyphens, specifically a group of 8 digits followed by three groups of 4 digits followed by a group of 12 digits, **for a total of 32 digits representing the 128 bits**.
