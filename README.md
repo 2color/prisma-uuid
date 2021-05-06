@@ -2,6 +2,8 @@
 
 This example shows how to use [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) in a **simple TypeScript script** to read and write data in a PostgreSQL database.
 
+This example uses **UUIDs** as the primary keys.
+
 ## Getting started
 
 1. Start the PostgreSQL development database with Docker Compose:
